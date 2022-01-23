@@ -15,7 +15,7 @@ The following containers will be  set up:
 ## Installation
 1. Download the docker-compose.yml in this repo.
 2. Run the command ``` docker-compose up -d ``` from the same directory as the compose-file.
-3. Go to [http://localhost:80](http://localhost:80)
+3. Go to [http://localhost:8080](http://localhost:8080)
 4. Log in with the default credentials: Admin // zabbix (mind the capital 'A').
 5. Go to Configuration -> Hosts -> Zabbix server.
 6. Change the 'Agent Interface' DNS-name to 'zabbix-agent' and at 'Connect to' select 'DNS':

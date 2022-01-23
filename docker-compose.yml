@@ -10,7 +10,14 @@ services:
             - "DB_SERVER_HOST=zabbix-sql"
             - "MYSQL_USER=zabbix"
             - "MYSQL_PASSWORD=zabbix"
-            - "MYSQL_ROOT_PASSWORD=zabbix"
+            - "ZBX_JAVAGATEWAY=zabbix-java-gateway"
+    zabbix-java-gateway:
+        container_name: zabbix-java-gateway
+        image: zabbix/zabbix-java-gateway:latest
+        environment:
+            - "DB_SERVER_HOST=zabbix-sql"
+            - "MYSQL_USER=zabbix"
+            - "MYSQL_PASSWORD=zabbix"
     zabbix-app:
         container_name: zabbix-app
         image: zabbix/zabbix-web-nginx-mysql:latest
