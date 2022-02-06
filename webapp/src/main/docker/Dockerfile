@@ -7,8 +7,9 @@ RUN wget https://repo.zabbix.com/zabbix/5.0/ubuntu/pool/main/z/zabbix-release/za
     && apt update \
     && apt install zabbix-agent \
     && rm -rf ${CATALINA_HOME}/webapps/* \
+    && rm -rf zabbix-release_5.0-1+focal_all.deb
 
-COPY ${project.artifactId}-${project.version}.${project.packaging} /usr/local/tomcat/webapps/${project.build.finalName}.${project.packaging}
+COPY ${project.artifactId}-${project.version}.${project.packaging} /usr/local/tomcat/webapps/ROOT.war
 
 COPY entrypoint.sh /entrypoint.sh
 
