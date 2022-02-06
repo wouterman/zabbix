@@ -32,7 +32,7 @@ services:
         container_name: zabbix-app
         image: zabbix/zabbix-web-nginx-mysql:5.0.19-alpine
         ports:
-            - "8080:8080"
+            - "8085:8080"
         environment:
             - "DB_SERVER_HOST=zabbix-server-db"
             - "MYSQL_USER=zabbix"
@@ -45,6 +45,11 @@ services:
         environment:
             - "ZBX_HOSTNAME=Zabbix server"
             - "ZBX_SERVER_HOST=zabbix-proxy"
+    webapp:
+        container_name: webapp
+        build: webapp
+        ports: 
+            - "8080:8080"
     zabbix-server-db:
         container_name: zabbix-server-db
         image: mysql:8.0.28

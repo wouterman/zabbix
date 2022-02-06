@@ -10,7 +10,7 @@ import org.springframework.boot.actuate.health.HealthIndicator;
 @Slf4j
 public class ToggleableHealthIndicator implements HealthIndicator {
 
-  private boolean healthy;
+  private boolean healthy = true;
 
   /**
    * Toggles the health of this {@link HealthIndicator}.
